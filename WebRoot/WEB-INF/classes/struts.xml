@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <package name="login" namespace="/" extends="struts-default">
+        <action name="*_login" class="Struts.Login.LoginAction" method="{1}login">
+            <result name="success">/{1}_homepage.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="exit">/index.jsp</result>
+        </action>
+    </package> 
+    <package name="book" namespace="/" extends="struts-default">
+    	<action name="book_search" class="Struts.Book.BookSearchAction" method="booksearch">
+    		<result name="success">/book_list.jsp</result>
+            <result name="error">/error.jsp</result>
+    	</action>
+    	<action name="book_lend" class="Struts.Book.BookLendAction" method="booklend">
+    		<result name="success">/book_lend.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action>
+     	<action name="book_owe" class="Struts.Book.BookLendAction" method="bookowe">
+    		<result name="success">/book_lend.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action>   	
+    </package>
+    <package name="reader" namespace="/" extends="struts-default">
+        <action name="reader_information" class="Struts.Reader.ReaderInformationAction" method="readerinformation">
+            <result name="success">/reader_information.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+    </package> 
+       
+    <package name="adminbook" namespace="/" extends="struts-default">
+ 		<action name="book_search_admin" class="Struts.Book.BookSearchAction" method="booksearchadmin">
+ 			<result name="success">/admin/book_list_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+ 		<action name="book_list_all_admin" class="Struts.Book.BookSearchAction" method="booksearchadmin">
+ 			<result name="success">/admin/book_list_all_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action> 		
+ 		<action name="book_detail_admin" class="Struts.Book.BookDetailAction" method="bookdetailadmin" >
+ 			<result name="success">/admin/book_detail_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+ 		<action name="book_store_admin" class="Struts.Book.BookStoreAction" method="bookstoreadmin" >
+ 			<result name="success">/admin/book_store_success_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action> 	
+  		<action name="book_loss_admin" class="Struts.Book.BookLossAction" method="booklossadmin" >
+ 			<result name="success">/admin/book_loss_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action> 	
+    	<action name="book_lend_2" class="Struts.Book.BookLend2Action" method="booklend2">
+    		<result name="success">/admin/book_lend_2_success.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action> 		
+    </package>
+    <package name="adminreader" namespace="/" extends="struts-default">
+ 		<action name="reader_list_admin" class="Struts.Reader.ReaderListAction" method="readerlist">
+ 			<result name="success">/admin/reader_list_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+    </package>    
+    <package name="admincard" namespace="/" extends="struts-default">
+ 		<action name="card_check_admin" class="Struts.Card.CardCheckAction" method="cardcheckaction">
+ 			<result name="success">/admin/card_check_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+ 		<action name="card_loss_admin" class="Struts.Card.CardLossAction" method="cardlossaction">
+ 			<result name="success">/admin/card_loss_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+    </package> 
+    <package name="adminborrow" namespace="/" extends="struts-default">
+ 		<action name="borrow_list_admin" class="Struts.Borrow.BorrowAction" method="borrowaction">
+ 			<result name="success">/admin/borrow_list_admin.jsp</result>
+ 			<result name="overdue">/admin/overdue_list_admin.jsp</result>
+ 			<result name="error">/error.jsp</result>
+ 		</action>
+    </package> 
+</struts>
