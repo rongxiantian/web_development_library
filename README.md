@@ -3,8 +3,8 @@ Based on struts2 frame, SQL Server database, Tomcat Server, and Myeclipes as IDE
 
 The project supports several functions:
 
-	1. authenticate user and administrator
-	2. storage books
+	1. authenticate reader and administrator
+	2. storage books informations
 	3. issue library card
 	4. borrow and return books
 	5. get information on books and readers
